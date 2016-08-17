@@ -2,14 +2,15 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>eu.transkribus</groupId>
   <artifactId>TranskribusRulesWebServiceClient</artifactId>
-  <version>0.0.1</version>
+  <version>0.0.2</version>
   <name></name>
   <description></description>
 	<properties>
 		<server_base>http://138.232.16.214:8080/axis2/services</server_base>
 		<service_name>TranskribusRulesWebService</service_name>
 		<service_package>eu.transkribus.client</service_package>
-		<axis_version>1.6.3</axis_version>
+<!-- 		<axis_version>1.7.3</axis_version> -->
+		<axis_version>1.6.4</axis_version>
 	</properties>
 	
 	<distributionManagement>
@@ -48,6 +49,7 @@
 			<groupId>org.apache.axis2</groupId>
 			<artifactId>axis2</artifactId>
 			<version>${axis_version}</version>
+			<type>pom</type>
 		</dependency>
 
 		<dependency>
@@ -74,6 +76,14 @@
 				</exclusion>				
 			</exclusions>			
 		</dependency>			
+
+<!-- added for 1.7.3 -->
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-adb</artifactId>
+			<version>${axis_version}</version>
+		</dependency>
+<!-- END -->
 
 		<dependency>
 			<groupId>org.apache.axis2</groupId>

@@ -45,26 +45,26 @@ public class TranskribusRulesWebServiceClient {
 	
 	public static void main(String[] args) throws RemoteException, IOExceptionException, ConfigExceptionException, AuthenticationExceptionException, SAXExceptionException, JessRuleExceptionException, ParserConfigurationExceptionException, InterruptedException {
 //		String url = "https://dbis-thure.uibk.ac.at/f/Get?id=OKNZPPENHCJPWDOLPINTAOKZ"; // null result --> no words in transcription
-		String url = "https://dbis-thure.uibk.ac.at/f/Get?id=MZNZATGEXGMQOREUMUACEIVI"; // empty string exception -> frisch, reason unknown
+//		String url = "https://dbis-thure.uibk.ac.at/f/Get?id=MZNZATGEXGMQOREUMUACEIVI"; // empty string exception -> frisch, reason unknown
 //		
-		
+		String url = "https://dbis-thure.uibk.ac.at/f/Get?id=DQGEBCCCOBIWTICIZCPLWAYN";
 		// TEST CALL SYNC VERSION:		
-//		String xmlStr = analyzePageStructure(url, 1, true, true, true);
-//		System.out.println(xmlStr);
+		String xmlStr = analyzePageStructure(url, 1, true, true, true);
+		System.out.println(xmlStr);
 		
 		// TEST CALL ASYNC VERSION:
-		analyzePageStructureAsync(url, 1, true, true, true, new TranskribusRulesWebServiceCallbackHandler() {
-			@Override public void receiveResultanalyzePageStructure(
-					eu.transkribus.client.TranskribusRulesWebServiceStub.AnalyzePageStructureResponse result) {
-				System.out.println("RESULT:");
-				System.out.println(result.get_return());
-			}
-
-			@Override public void receiveErroranalyzePageStructure(java.lang.Exception e) {
-				e.printStackTrace();
-			}
-		});
-		Thread.currentThread().sleep(2000); // wait for 2 seconds to recieve async response before program exits
+//		analyzePageStructureAsync(url, 1, true, true, true, new TranskribusRulesWebServiceCallbackHandler() {
+//			@Override public void receiveResultanalyzePageStructure(
+//					eu.transkribus.client.TranskribusRulesWebServiceStub.AnalyzePageStructureResponse result) {
+//				System.out.println("RESULT:");
+//				System.out.println(result.get_return());
+//			}
+//
+//			@Override public void receiveErroranalyzePageStructure(java.lang.Exception e) {
+//				e.printStackTrace();
+//			}
+//		});
+//		Thread.currentThread().sleep(2000); // wait for 2 seconds to recieve async response before program exits
 		
 //		System.out.println("DONE!");
 	}
